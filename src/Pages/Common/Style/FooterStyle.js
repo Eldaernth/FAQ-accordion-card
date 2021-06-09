@@ -1,5 +1,5 @@
 import style from '@emotion/styled';
-import { questionColor, gradientEndColor } from '../../../CssValues';
+import { questionColor, gradientEndColor } from '../../../cssValues';
 
 export const FooterStyle = style.footer`
     width:100%;
