@@ -9,6 +9,9 @@ module.exports = merge(common, {
     path: path.resolve(`${__dirname}/dist`),
     filename: 'main.js',
   },
+  devServer: {
+    historyApiFallback: true,
+  },
   devtool: 'source-map',
   plugins: [
     new HtmlWebPackPlugin({
