@@ -34,17 +34,3 @@ it('renders element after click', () => {
     screen.getByText(/You can invite up to 2 additional users on the Free plan/)
   ).toBeInTheDocument();
 });
-
-it('renders element after keyDown', () => {
-  render(<FAQCard />);
-  const downArrow = screen.getAllByAltText('down arrow');
-  fireEvent.keyDown(downArrow[0], {
-    key: 'Enter',
-    code: 'Enter',
-  });
-  expect(
-    screen.getByText(
-      /You can invite up to 2 additional users on the Free plan./
-    )
-  ).toBeInTheDocument();
-});

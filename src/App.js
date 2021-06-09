@@ -1,18 +1,20 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { AppStyle } from './CssValues';
+import { AppStyle } from './cssValues';
 import Footer from './Pages/Common/Components/Footer';
 import FAQCard from './Pages/FAQ/Components/FAQCard';
+import NotFound from './Pages/404/Component/NotFound';
 
 export default function App() {
   return (
-    <AppStyle>
-      <BrowserRouter>
+    <BrowserRouter>
+      <AppStyle>
         <Switch>
-          <Route path="/" component={FAQCard} />
+          <Route exact path="/" component={FAQCard} />
+          <Route component={NotFound} />
         </Switch>
-      </BrowserRouter>
-      <Footer />
-    </AppStyle>
+        <Footer />
+      </AppStyle>
+    </BrowserRouter>
   );
 }
