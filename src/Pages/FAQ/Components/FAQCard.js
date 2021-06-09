@@ -1,40 +1,67 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { fAQData } from '../../../data';
+import * as Style from '../Style/FAQCardStyle';
 
 export default function FAQCard() {
+  const [faqData, setFaqData] = useState(fAQData);
+
+  const changeFaqData = (question) => {
+    setFaqData((prev) => [
+      ...prev.map((elem) => {
+        if (elem.question === question.question) {
+          return { ...elem, toggled: !elem.toggled };
+        }
+        return { ...elem, toggled: false };
+      }),
+    ]);
+  };
+
+  const toggleQuestion = (question) => {
+    changeFaqData(question);
+  };
+  const toggleOnKeyDown = (e, question) => {
+    e.stopImmediatePropagation();
+    if (e.key === 'Enter') {
+      changeFaqData(question);
+    }
+  };
+
+  console.log(faqData);
+
   return (
-    <div>
-      <div>
-        <img src="./images/bg-pattern-mobile.svg" alt="asd" />
-        <img src="./images/illustration-woman-online-mobile.svg" alt="asd" />
-      </div>
-      <div>
-        <h1>FAQ</h1>
-        <ul>
-          <li>
-            How many team members can I invite? You can invite up to 2
-            additional users on the Free plan. There is no limit on team members
-            for the Premium plan.
-          </li>{' '}
-          <li>
-            What is the maximum file upload size? No morse than 2GB. All files
-            in your account must fit your allotted storage space.
-          </li>
-          <li>
-            {' '}
-            How do I reset my password? Click “Forgot password” from the login
-            page or “Change password” from your profile page. A reset link will
-            be emailed to you.
-          </li>{' '}
-          <li>
-            Can I cancel my subscription? Yes! Send us a message and we’ll
-            process your request no questions asked.
-          </li>{' '}
-          <li>
-            Do you provide additional support? Chat and email support is
-            available 24/7. Phone lines are open during normal business hours.
-          </li>
-        </ul>
-      </div>
-    </div>
+    <Style.FAQCardWrapper>
+      <Style.FAQCardStyle>
+        <Style.ImgWrapper>
+          <Style.WomanIllustration
+            src="./images/illustration-woman-online-mobile.svg"
+            alt="illustration of a woman online"
+          />
+          <Style.BgPattern
+            src="./images/bg-pattern-mobile.svg"
+            alt="background of woman illustration online"
+          />
+        </Style.ImgWrapper>
+        <Style.FAQWrapper>
+          <h1>FAQ</h1>
+          <Style.FAQList>
+            {faqData.map((row) => (
+              <Style.FAQListElement key={row.id}>
+                <Style.QuestionWrapper>
+                  <span>{row.question}</span>
+                  <button
+                    type="button"
+                    onClick={() => toggleQuestion(row)}
+                    onKeyDown={(e) => toggleOnKeyDown(e, row)}
+                  >
+                    <img src="./images/icon-arrow-down.svg" alt="down arrow" />
+                  </button>
+                </Style.QuestionWrapper>
+                {row.toggled && <p>{row.answer}</p>}
+              </Style.FAQListElement>
+            ))}
+          </Style.FAQList>
+        </Style.FAQWrapper>
+      </Style.FAQCardStyle>
+    </Style.FAQCardWrapper>
   );
 }
