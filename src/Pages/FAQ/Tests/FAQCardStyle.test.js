@@ -1,5 +1,5 @@
 import React from 'react';
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/extend-expect';
 import { render, screen, cleanup, fireEvent } from '@testing-library/react';
 import FAQCard from '../Components/FAQCard';
 
@@ -8,11 +8,11 @@ afterEach(cleanup);
 it('renders images', () => {
   render(<FAQCard />);
   const images = document.querySelectorAll('img');
-  expect(images.length).toBe(7);
+  expect(images.length).toBe(8);
   expect(images[0].alt).toContain('illustration of a woman online');
-  expect(images[1].alt).toContain('background of woman illustration online');
+  expect(images[2].alt).toContain('background of woman illustration online');
   expect(images[0].src).toContain('illustration-woman-online');
-  expect(images[1].src).toContain('bg-pattern');
+  expect(images[2].src).toContain('bg-pattern');
 });
 
 it('renders FAQ title', () => {
