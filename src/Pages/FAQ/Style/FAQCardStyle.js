@@ -110,35 +110,42 @@ export const FAQListElement = style.li`
     }
 `;
 
-export const QuestionWrapper = style.div`
-    display: flex;
-    justify-content: space-between; 
-    text-align:left;
-    &:focus-within{
-        font-weight:${strongFontWeigth};
+export const QuestionButton = style.button`
+    cursor:pointer;
+    width:100%;
+    padding: 0;
+    border: none;
+    outline: none;
+    font: inherit;
+    color: inherit;
+    background: none;
+    &:focus {
+        & > div > img {
+        transform: rotate(180deg);
+        }
+        & > div > span {
+            font-weight:${strongFontWeigth};
+        }
     }
-    & > button {
-        cursor:pointer;
-        padding: 0;
-        border: none;
-        outline: none;
-        font: inherit;
-        color: inherit;
-        background: none;
-        &:focus-visible {
-            outline:${dividerColor} solid 2px;
+    &:focus-visible {
+        & > div > img {
+        outline:${dividerColor} solid 2px;
         }
-        &:focus {
-            transform: rotate(180deg);
-        }
-    },
-    & > img {
-        object-fit:contain
-    },
-    & > span {
-        color: ${questionColor};
-        &:hover{
+    }
+    &:hover{
+        & > div > span {
             color:${hoverColor};
+        }
+    }
+    & > div {
+        width:100%;
+        display:flex;
+        justify-content:space-between;
+        & > img {
+            object-fit:contain;
+        },
+        & > span {
+            color: ${questionColor};
         }
     }
 `;

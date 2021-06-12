@@ -75,19 +75,19 @@ export default function FAQCard() {
           <Style.FAQList>
             {faqData.map((row) => (
               <Style.FAQListElement key={row.id}>
-                <Style.QuestionWrapper>
-                  <span>{row.question}</span>
-                  <button
-                    type="button"
-                    onClick={() => toggleQuestion(row)}
-                    onKeyDown={(e) => toggleOnKeyDown(e, row)}
-                  >
+                <Style.QuestionButton
+                  type="button"
+                  onClick={() => toggleQuestion(row)}
+                  onKeyDown={(e) => toggleOnKeyDown(e, row)}
+                >
+                  <div>
+                    <span>{row.question}</span>
                     <img
                       src="../../../../images/icon-arrow-down.svg"
                       alt="down arrow"
                     />
-                  </button>
-                </Style.QuestionWrapper>
+                  </div>
+                </Style.QuestionButton>
                 {row.toggled && <p>{row.answer}</p>}
               </Style.FAQListElement>
             ))}
