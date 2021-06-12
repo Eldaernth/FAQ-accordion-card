@@ -5,6 +5,7 @@ export const desktopWidth = '1440px';
 
 export const questionColor = 'hsl(238, 29%, 16%)';
 export const answerColor = 'hsl(240, 6%, 50%)';
+export const hoverColor = 'hsl(14, 88%, 65%)';
 
 export const gradientStartColor = 'hsl(273, 75%, 66%)';
 export const gradientEndColor = 'hsl(240, 73%, 65%)';
