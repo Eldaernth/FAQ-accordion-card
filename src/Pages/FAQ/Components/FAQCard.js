@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { fAQData } from '../../../data';
 import * as Style from '../Style/FAQCardStyle';
+import bgPatternM from '../../../../images/bg-pattern-mobile.svg';
+import bgPatternD from '../../../../images/bg-pattern-desktop.svg';
+import illustrationBoxD from '../../../../images/illustration-box-desktop.svg';
+import illWomanOnlineM from '../../../../images/illustration-woman-online-mobile.svg';
+import illWomanOnlineD from '../../../../images/illustration-woman-online-desktop.svg';
+import iconArrowDown from '../../../../images/icon-arrow-down.svg';
 
 export default function FAQCard() {
   const [faqData, setFaqData] = useState(fAQData);
@@ -34,29 +40,20 @@ export default function FAQCard() {
         <Style.ImgWrapper>
           <div>
             <picture>
-              <source
-                media="(min-width: 1440px)"
-                srcSet="./images/illustration-woman-online-desktop.svg"
-              />
+              <source media="(min-width: 1440px)" srcSet={illWomanOnlineD} />
               <Style.WomanIllustration
-                src="./images/illustration-woman-online-mobile.svg"
+                src={illWomanOnlineM}
                 alt="illustration of a woman online"
               />
             </picture>
             <picture>
-              <source
-                media="(min-width: 1440px)"
-                srcSet="./images/illustration-box-desktop.svg"
-              />
+              <source media="(min-width: 1440px)" srcSet={illustrationBoxD} />
               <Style.IllustrationBox src="data:" alt="" />
             </picture>
             <picture>
-              <source
-                media="(min-width: 1440px)"
-                srcSet="./images/bg-pattern-desktop.svg"
-              />
+              <source media="(min-width: 1440px)" srcSet={bgPatternD} />
               <Style.BgPattern
-                src="./images/bg-pattern-mobile.svg"
+                src={bgPatternM}
                 alt="background of woman illustration online"
               />
             </picture>
@@ -74,7 +71,7 @@ export default function FAQCard() {
                     onClick={() => toggleQuestion(row)}
                     onKeyDown={(e) => toggleOnKeyDown(e, row)}
                   >
-                    <img src="./images/icon-arrow-down.svg" alt="down arrow" />
+                    <img src={iconArrowDown} alt="down arrow" />
                   </button>
                 </Style.QuestionWrapper>
                 {row.toggled && <p>{row.answer}</p>}

@@ -15,6 +15,7 @@ module.exports = merge(common, {
   devtool: 'source-map',
   plugins: [
     new HtmlWebPackPlugin({
+      favicon: './images/favicon-32x32.png',
       template: './src/index.html',
     }),
   ],

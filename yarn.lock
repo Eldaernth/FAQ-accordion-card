@@ -3590,7 +3590,7 @@
   dependencies:
     "flat-cache" "^2.0.1"
 
-"file-loader@^6.2.0":
+"file-loader@*", "file-loader@^6.2.0":
   "integrity" "sha512-qo3glqyTa61Ytg4u73GultjHGjdRyig3tG6lPtyX/jOEJvHif9uB0/OCI2Kif6ctF3caQTW2G5gym21oAsI4pw=="
   "resolved" "https://registry.npmjs.org/file-loader/-/file-loader-6.2.0.tgz"
   "version" "6.2.0"
@@ -7442,6 +7442,15 @@
   "integrity" "sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI="
   "resolved" "https://registry.npmjs.org/urix/-/urix-0.1.0.tgz"
   "version" "0.1.0"
+
+"url-loader@^4.1.1":
+  "integrity" "sha512-3BTV812+AVHHOJQO8O5MkWgZ5aosP7GnROJwvzLS9hWDj00lZ6Z0wNak423Lp9PBZN05N+Jk/N5Si8jRAlGyWA=="
+  "resolved" "https://registry.npmjs.org/url-loader/-/url-loader-4.1.1.tgz"
+  "version" "4.1.1"
+  dependencies:
+    "loader-utils" "^2.0.0"
+    "mime-types" "^2.1.27"
+    "schema-utils" "^3.0.0"
 
 "url-parse@^1.4.3", "url-parse@^1.5.1":
   "integrity" "sha512-HOfCOUJt7iSYzEx/UqgtwKRMC6EU91NFhsCHMv9oM03VJcVo2Qrp8T8kI9D7amFf1cu+/3CEhgb3rF9zL7k85Q=="

@@ -29,13 +29,23 @@ module.exports = {
         ],
       },
       {
-        test: /\.(svg|png|jpe?g|gif)$/i,
+        test: /\.(jpg|jpeg|gif|png|svg|webp)$/i,
         use: [
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]',
-              outputPath: 'images',
+              name: '[path]/[name].[ext]',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              name: '[path]/[name].[ext]',
             },
           },
         ],

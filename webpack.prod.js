@@ -11,6 +11,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new HtmlWebPackPlugin({
+      favicon: './images/favicon-32x32.png',
       template: './src/index.html',
       minify: {
         removeAttributeQuotes: true,
