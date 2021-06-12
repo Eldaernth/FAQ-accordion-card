@@ -32,14 +32,35 @@ export default function FAQCard() {
     <Style.FAQCardWrapper>
       <Style.FAQCardStyle>
         <Style.ImgWrapper>
-          <Style.WomanIllustration
-            src="./images/illustration-woman-online-mobile.svg"
-            alt="illustration of a woman online"
-          />
-          <Style.BgPattern
-            src="./images/bg-pattern-mobile.svg"
-            alt="background of woman illustration online"
-          />
+          <div>
+            <picture>
+              <source
+                media="(min-width: 1440px)"
+                srcSet="./images/illustration-woman-online-desktop.svg"
+              />
+              <Style.WomanIllustration
+                src="./images/illustration-woman-online-mobile.svg"
+                alt="illustration of a woman online"
+              />
+            </picture>
+            <picture>
+              <source
+                media="(min-width: 1440px)"
+                srcSet="./images/illustration-box-desktop.svg"
+              />
+              <Style.IllustrationBox src="data:" alt="" />
+            </picture>
+            <picture>
+              <source
+                media="(min-width: 1440px)"
+                srcSet="./images/bg-pattern-desktop.svg"
+              />
+              <Style.BgPattern
+                src="./images/bg-pattern-mobile.svg"
+                alt="background of woman illustration online"
+              />
+            </picture>
+          </div>
         </Style.ImgWrapper>
         <Style.FAQWrapper>
           <h1>FAQ</h1>

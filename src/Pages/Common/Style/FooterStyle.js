@@ -1,9 +1,9 @@
 import style from '@emotion/styled';
-import { questionColor, gradientEndColor } from '../../../cssValues';
+import { questionColor } from '../../../cssValues';
 
 export const FooterStyle = style.footer`
     width:100%;
-    background-color:${gradientEndColor};
+    background-color:inherited;
     text-align:center; 
 `;
 export const Link = style.a`
