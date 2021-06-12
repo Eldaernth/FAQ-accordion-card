@@ -40,20 +40,29 @@ export default function FAQCard() {
         <Style.ImgWrapper>
           <div>
             <picture>
-              <source media="(min-width: 1440px)" srcSet={illWomanOnlineD} />
+              <source
+                media="(min-width: 1440px)"
+                srcSet="../../../../images/illustration-woman-online-desktop.svg"
+              />
               <Style.WomanIllustration
-                src={illWomanOnlineM}
+                src="../../../../images/illustration-woman-online-mobile.svg"
                 alt="illustration of a woman online"
               />
             </picture>
             <picture>
-              <source media="(min-width: 1440px)" srcSet={illustrationBoxD} />
+              <source
+                media="(min-width: 1440px)"
+                srcSet="../../../../images/illustration-box-desktop.svg"
+              />
               <Style.IllustrationBox src="data:" alt="" />
             </picture>
             <picture>
-              <source media="(min-width: 1440px)" srcSet={bgPatternD} />
+              <source
+                media="(min-width: 1440px)"
+                srcSet="../../../../images/bg-pattern-desktop.svg"
+              />
               <Style.BgPattern
-                src={bgPatternM}
+                src="./images/bg-pattern-mobile.svg"
                 alt="background of woman illustration online"
               />
             </picture>
@@ -71,7 +80,10 @@ export default function FAQCard() {
                     onClick={() => toggleQuestion(row)}
                     onKeyDown={(e) => toggleOnKeyDown(e, row)}
                   >
-                    <img src={iconArrowDown} alt="down arrow" />
+                    <img
+                      src="../../../../images/icon-arrow-down.svg"
+                      alt="down arrow"
+                    />
                   </button>
                 </Style.QuestionWrapper>
                 {row.toggled && <p>{row.answer}</p>}

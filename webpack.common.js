@@ -29,12 +29,12 @@ module.exports = {
         ],
       },
       {
-        test: /\.(jpg|jpeg|gif|png|svg|webp)$/i,
+        test: /\.svg$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'svg-url-loader',
             options: {
-              name: '[path]/[name].[ext]',
+              limit: 10000,
             },
           },
         ],
@@ -44,6 +44,17 @@ module.exports = {
         use: [
           {
             loader: 'url-loader',
+            options: {
+              name: '[path]/[name].[ext]',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(jpg|jpeg|gif|png|svg|webp)$/i,
+        use: [
+          {
+            loader: 'file-loader',
             options: {
               name: '[path]/[name].[ext]',
             },
